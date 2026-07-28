@@ -1,1 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riain Civil Engineering | Civil Engineering Contractors Ireland</title>
+  <meta name="description" content="Riain Civil Engineering delivers civil engineering, groundworks, drainage, utilities, public lighting and infrastructure works across Ireland." />
+  <meta name="theme-color" content="#0b1f33" />
+  <meta property="og:title" content="Riain Civil Engineering" />
+  <meta property="og:description" content="Building infrastructure safely, efficiently and to a high standard." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <style>
+    :root{
+      --navy:#0b1f33; --navy2:#122f4f; --orange:#f28c28; --orange2:#ffab45;
+      --ink:#182433; --muted:#657384; --light:#f4f7fa; --white:#fff;
+      --line:#dfe7ef; --green:#2f7d57; --shadow:0 18px 55px rgba(10,31,51,.12);
+      --radius:18px; --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--orange)}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--orange)}
+    h1,h2,h3{line-height:1.12;margin:0 0 18px}
+    h1{font-size:clamp(2.55rem,6vw,5.2rem);letter-spacing:-.055em}
+    h2{font-size:clamp(2rem,4vw,3.35rem);letter-spacing:-.04em}
+    h3{font-size:1.25rem}
+    p{margin:0 0 18px;color:var(--muted)}
+    section{padding:100px 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:9px;font-weight:800;border:1px solid transparent;transition:.25s;cursor:pointer}
+    .btn-primary{background:var(--orange);color:#172331}
+    .btn-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+    .btn-outline{border-color:rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.05)}
+    .btn-outline:hover{background:#fff;color:var(--navy)}
+    .btn-dark{background:var(--navy);color:#fff}
+    .btn-dark:hover{background:var(--navy2);transform:translateY(-2px)}
 
+    .topbar{background:#071522;color:#d9e3ec;font-size:.84rem}
+    .topbar .container{display:flex;justify-content:space-between;align-items:center;padding:8px 0;gap:15px}
+    .topbar-links{display:flex;gap:22px;flex-wrap:wrap}
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(13px);border-bottom:1px solid rgba(15,39,62,.08)}
+    .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;color:var(--navy)}
+    .brand-mark{width:48px;height:48px;border-radius:10px;background:linear-gradient(145deg,var(--navy),#214e76);display:grid;place-items:center;color:var(--orange);font-size:1.45rem;font-weight:950;box-shadow:0 8px 20px rgba(11,31,51,.2)}
+    .brand-text{line-height:1.05;font-size:1.02rem}
+    .brand-text small{display:block;color:var(--muted);font-weight:700;font-size:.69rem;letter-spacing:.12em;margin-top:5px}
+    .nav-links{display:flex;align-items:center;gap:27px;font-weight:750;font-size:.93rem}
+    .nav-links a:hover{color:var(--orange)}
+    .menu-btn{display:none;border:0;background:none;font-size:1.6rem;color:var(--navy)}
+
+    .hero{min-height:760px;padding:0;display:grid;align-items:center;color:#fff;position:relative;overflow:hidden;background:
+      linear-gradient(90deg,rgba(4,17,29,.94) 0%,rgba(5,25,43,.83) 50%,rgba(5,25,43,.35) 100%),
+      url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,rgba(4,17,29,.35))}
+    .hero-content{position:relative;z-index:2;max-width:810px;padding:110px 0 150px}
+    .hero h1 span{color:var(--orange)}
+    .hero p{font-size:1.16rem;max-width:660px;color:#d9e4ed}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .hero-badges{display:flex;gap:34px;flex-wrap:wrap;margin-top:58px;padding-top:28px;border-top:1px solid rgba(255,255,255,.2)}
+    .hero-badge strong{display:block;font-size:1.12rem;color:#fff}
+    .hero-badge span{font-size:.82rem;color:#aebdca}
+    .quick-contact{position:absolute;right:0;bottom:0;z-index:3;background:var(--orange);color:var(--navy);padding:22px 35px;font-weight:850}
+
+    .intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .image-stack{position:relative;padding:0 55px 55px 0}
+    .image-stack img{height:500px;width:100%;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .image-stack .small{position:absolute;width:52%;height:220px;right:0;bottom:0;border:8px solid white}
+    .experience-card{position:absolute;left:-20px;bottom:42px;background:var(--navy);color:white;padding:25px 28px;border-radius:13px;box-shadow:var(--shadow)}
+    .experience-card strong{display:block;font-size:2.2rem;color:var(--orange)}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
+    .check{display:flex;gap:10px;align-items:flex-start;font-weight:760;color:var(--ink)}
+    .check:before{content:"✓";min-width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--green);font-weight:900}
+
+    .services{background:var(--light)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:45px}
+    .section-head>div:first-child{max-width:670px}
+    .section-head p{max-width:480px}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.28s;position:relative;overflow:hidden}
+    .service-card:after{content:"";position:absolute;left:0;bottom:0;width:0;height:4px;background:var(--orange);transition:.3s}
+    .service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+    .service-card:hover:after{width:100%}
+    .icon{width:54px;height:54px;border-radius:12px;background:#fff2e4;color:var(--orange);display:grid;place-items:center;font-size:1.55rem;margin-bottom:23px}
+    .service-card p{font-size:.94rem;margin:0}
+
+    .why{background:var(--navy);color:white;position:relative;overflow:hidden}
+    .why:before{content:"";position:absolute;width:470px;height:470px;border:100px solid rgba(255,255,255,.025);border-radius:50%;right:-150px;top:-150px}
+    .why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center;position:relative}
+    .why p{color:#b9c8d5}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .feature{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);padding:25px;border-radius:15px}
+    .feature .num{font-size:.75rem;color:var(--orange);font-weight:900;letter-spacing:.15em}
+    .feature h3{margin-top:12px;color:#fff}
+    .feature p{font-size:.89rem;margin:0}
+
+    .projects-grid{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-auto-rows:300px;gap:18px}
+    .project{position:relative;border-radius:var(--radius);overflow:hidden;color:white}
+    .project:first-child{grid-row:span 2}
+    .project img{width:100%;height:100%;object-fit:cover;transition:.45s}
+    .project:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 38%,rgba(5,18,31,.92))}
+    .project-info{position:absolute;z-index:2;bottom:0;padding:25px}
+    .project-info span{font-size:.75rem;text-transform:uppercase;letter-spacing:.13em;color:#ffc27b;font-weight:850}
+    .project-info h3{margin:7px 0 0;color:#fff}
+    .project:hover img{transform:scale(1.055)}
+
+    .careers{background:linear-gradient(110deg,#f3f7fa 0%,#fff 75%)}
+    .career-panel{display:grid;grid-template-columns:1fr .9fr;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+    .career-content{padding:55px}
+    .career-image{min-height:480px;background:
+      linear-gradient(rgba(8,29,47,.18),rgba(8,29,47,.35)),
+      url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=85') center/cover}
+    .roles{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0}
+    .role{padding:9px 13px;border-radius:999px;background:var(--light);border:1px solid var(--line);font-size:.86rem;font-weight:700}
+
+    .contact{background:#fff}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px}
+    .contact-card{background:var(--navy);color:#fff;border-radius:22px;padding:42px}
+    .contact-card p{color:#b8c6d2}
+    .contact-item{display:flex;gap:16px;padding:20px 0;border-top:1px solid rgba(255,255,255,.12)}
+    .contact-item:first-of-type{margin-top:20px}
+    .contact-item strong{display:block;color:#fff}
+    .contact-item span,.contact-item a{color:#b8c6d2}
+    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.85rem;font-weight:800;color:var(--ink)}
+    input,select,textarea{width:100%;border:1px solid #cfd9e3;border-radius:9px;padding:13px 14px;font:inherit;background:#fff}
+    textarea{min-height:125px;resize:vertical}
+    input:focus,select:focus,textarea:focus{outline:2px solid rgba(242,140,40,.28);border-color:var(--orange)}
+
+    footer{background:#071522;color:#aebdca;padding:55px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px}
+    footer h3{color:#fff}
+    footer a{display:block;margin:8px 0}
+    footer a:hover{color:var(--orange)}
+    .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:35px;padding-top:22px;font-size:.85rem;display:flex;justify-content:space-between;gap:20px}
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .topbar{display:none}
+      .nav-links{position:absolute;top:78px;left:0;right:0;background:#fff;display:none;flex-direction:column;align-items:flex-start;padding:25px 20px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+      .nav-links.open{display:flex}
+      .menu-btn{display:block}
+      .nav-links .btn{width:100%}
+      .hero{min-height:690px}
+      .quick-contact{display:none}
+      .intro-grid,.why-grid,.career-panel,.contact-grid{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .projects-grid{grid-template-columns:1fr 1fr}
+      .project:first-child{grid-row:auto;grid-column:span 2}
+      .career-image{min-height:350px}
+    }
+    @media(max-width:620px){
+      .container{width:min(100% - 26px,var(--max))}
+      section{padding:75px 0}
+      .brand-text small{display:none}
+      .hero-content{padding:85px 0 110px}
+      .hero-badges{gap:20px}
+      .intro-grid{gap:45px}
+      .image-stack{padding:0}
+      .image-stack img{height:390px}
+      .image-stack .small,.experience-card{display:none}
+      .checks,.service-grid,.feature-grid,.projects-grid,.contact-form,.footer-grid{grid-template-columns:1fr}
+      .project:first-child{grid-column:auto}
+      .project{height:300px}
+      .section-head{display:block}
+      .career-content,.contact-card{padding:30px 24px}
+      .copyright{display:block}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div>Building infrastructure across Ireland</div>
+      <div class="topbar-links">
+        <a href="tel:+353940936111">☎ 094 093 6111</a>
+        <a href="mailto:info@riain.ie">✉ info@riain.ie</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Riain Civil Engineering home">
+        <span class="brand-mark">R</span>
+        <span class="brand-text">RIAIN CIVIL ENGINEERING<small>QUALITY · SAFETY · DELIVERY</small></span>
+      </a>
+      <button class="menu-btn" aria-label="Open navigation">☰</button>
+      <div class="nav-links">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a>
+        <a href="#safety">Safety</a><a href="#careers">Careers</a><a href="#contact">Contact</a>
+        <a class="btn btn-dark" href="#contact">Request a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-content">
+      <span class="eyebrow">Civil Engineering Contractors</span>
+      <h1>Building Ireland's infrastructure with <span>confidence.</span></h1>
+      <p>Riain Civil Engineering delivers dependable civil engineering and infrastructure solutions with a strong focus on safety, quality workmanship and efficient project delivery.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#services">Explore Our Services →</a>
+        <a class="btn btn-outline" href="#contact">Discuss a Project</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><strong>Safety-led</strong><span>Planning and delivery</span></div>
+        <div class="hero-badge"><strong>Quality-focused</strong><span>Workmanship and control</span></div>
+        <div class="hero-badge"><strong>Reliable</strong><span>Responsive project teams</span></div>
+      </div>
+    </div>
+    <a class="quick-contact" href="tel:+353940936111">Call our team → 094 093 6111</a>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container intro-grid reveal">
+        <div class="image-stack">
+          <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1200&q=85" alt="Civil engineering works">
+          <img class="small" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=700&q=85" alt="Engineering team on site">
+          <div class="experience-card"><strong>Built right</strong><span>From planning to completion</span></div>
+        </div>
+        <div>
+          <span class="eyebrow">About Riain</span>
+          <h2>Practical engineering. Professional delivery.</h2>
+          <p>Based in County Mayo, Riain Civil Engineering supports civil engineering and infrastructure projects throughout Ireland. We work collaboratively with clients, project teams and stakeholders to deliver safe, efficient and well-managed works.</p>
+          <p>Our approach combines experienced site teams, careful planning, appropriate plant and equipment, and a commitment to completing each project to a high standard.</p>
+          <div class="checks">
+            <div class="check">Safety-first approach</div><div class="check">Experienced workforce</div>
+            <div class="check">Modern plant and equipment</div><div class="check">Responsive delivery</div>
+          </div>
+          <a class="btn btn-dark" href="#contact">Talk to Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Our Services</span><h2>Complete civil engineering support</h2></div>
+          <p>Flexible, practical solutions for public infrastructure, utilities, commercial sites and external works.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><div class="icon">🏗</div><h3>Civil Engineering</h3><p>Managed civil works delivered from site preparation through to completion and handover.</p></article>
+          <article class="service-card reveal"><div class="icon">⛏</div><h3>Groundworks & Excavation</h3><p>Site clearance, earthworks, trenching, foundations and associated ground preparation.</p></article>
+          <article class="service-card reveal"><div class="icon">💧</div><h3>Drainage</h3><p>Surface water, foul drainage, attenuation, chambers and associated drainage infrastructure.</p></article>
+          <article class="service-card reveal"><div class="icon">⚡</div><h3>Utilities & Ducting</h3><p>Duct installation, service routes, chambers and support works for utility infrastructure.</p></article>
+          <article class="service-card reveal"><div class="icon">💡</div><h3>Public Lighting</h3><p>Civil works associated with public-lighting columns, ducting, chambers and reinstatement.</p></article>
+          <article class="service-card reveal"><div class="icon">🚧</div><h3>Roads & Footpaths</h3><p>Kerbing, paving, footpaths, road construction, repairs and high-quality reinstatement works.</p></article>
+          <article class="service-card reveal"><div class="icon">🚦</div><h3>Traffic Management</h3><p>Carefully coordinated works in live environments with safe access and traffic controls.</p></article>
+          <article class="service-card reveal"><div class="icon">🌱</div><h3>External Works</h3><p>Hard landscaping, boundaries, finishing works and site-wide external development.</p></article>
+          <article class="service-card reveal"><div class="icon">📋</div><h3>Project Support</h3><p>Site coordination, planning, supervision and documentation to support efficient delivery.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="safety">
+      <div class="container why-grid">
+        <div class="reveal">
+          <span class="eyebrow">Why Choose Riain</span>
+          <h2>Safety and quality are built into every stage.</h2>
+          <p>Good outcomes start with clear planning, competent people and disciplined site controls. We aim to identify risks early, communicate effectively and maintain high standards throughout the works.</p>
+          <a class="btn btn-primary" href="#contact">Start a Conversation</a>
+        </div>
+        <div class="feature-grid">
+          <div class="feature reveal"><span class="num">01</span><h3>Safety-led planning</h3><p>Hazards, access, interfaces and controls are considered before work begins.</p></div>
+          <div class="feature reveal"><span class="num">02</span><h3>Competent teams</h3><p>Trained personnel and experienced supervision support safe project delivery.</p></div>
+          <div class="feature reveal"><span class="num">03</span><h3>Quality workmanship</h3><p>Attention to detail and practical quality controls throughout the project.</p></div>
+          <div class="feature reveal"><span class="num">04</span><h3>Environmental care</h3><p>Responsible working methods, good housekeeping and appropriate controls.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Our Capabilities</span><h2>Built for demanding environments</h2></div>
+          <p>Replace these sample images with your own completed-project photographs when available.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=1300&q=85" alt="Infrastructure project"><div class="project-info"><span>Infrastructure</span><h3>Complex civil works</h3></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=900&q=85" alt="Excavation works"><div class="project-info"><span>Groundworks</span><h3>Excavation & preparation</h3></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=900&q=85" alt="Road works"><div class="project-info"><span>Public Realm</span><h3>Roads & footpaths</h3></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=900&q=85" alt="Utilities work"><div class="project-info"><span>Utilities</span><h3>Service infrastructure</h3></div></article>
+          <article class="project reveal"><img src="https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?auto=format&fit=crop&w=900&q=85" alt="Construction team"><div class="project-info"><span>Delivery</span><h3>Professional site teams</h3></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="careers" id="careers">
+      <div class="container career-panel reveal">
+        <div class="career-content">
+          <span class="eyebrow">Careers</span>
+          <h2>Build your career with Riain.</h2>
+          <p>We welcome interest from skilled, dependable and safety-focused people who want to contribute to civil engineering projects across Ireland.</p>
+          <div class="roles">
+            <span class="role">Groundworkers</span><span class="role">Plant Operators</span>
+            <span class="role">Site Engineers</span><span class="role">Supervisors</span>
+            <span class="role">General Operatives</span><span class="role">H&S Personnel</span>
+            <span class="role">Drivers</span><span class="role">Apprentices</span>
+          </div>
+          <p><strong>Interested in joining us?</strong> Email your CV and a short introduction to our team.</p>
+          <a class="btn btn-dark" href="mailto:info@riain.ie?subject=Career%20Application%20-%20Riain%20Civil%20Engineering">Apply by Email →</a>
+        </div>
+        <div class="career-image" role="img" aria-label="Construction professionals working on site"></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <span class="eyebrow">Contact</span><h2>Let's discuss your next project.</h2>
+          <p>Contact Riain Civil Engineering for project enquiries, tender opportunities, employment enquiries or general information.</p>
+          <div class="contact-item"><div>☎</div><div><strong>Phone</strong><a href="tel:+353940936111">094 093 6111</a></div></div>
+          <div class="contact-item"><div>✉</div><div><strong>Email</strong><a href="mailto:info@riain.ie">info@riain.ie</a></div></div>
+          <div class="contact-item"><div>⌖</div><div><strong>Office</strong><span>Killeenrevagh, Hollymount,<br>Claremorris, Co. Mayo, F12 V086</span></div></div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Send an Enquiry</span><h2>How can we help?</h2>
+          <form class="contact-form" onsubmit="sendMail(event)">
+            <div class="field"><label for="name">Name</label><input id="name" required></div>
+            <div class="field"><label for="company">Company</label><input id="company"></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" type="tel"></div>
+            <div class="field full"><label for="subject">Enquiry type</label><select id="subject"><option>Project enquiry</option><option>Tender opportunity</option><option>Careers</option><option>General enquiry</option></select></div>
+            <div class="field full"><label for="message">Message</label><textarea id="message" required></textarea></div>
+            <div class="field full"><button class="btn btn-primary" type="submit">Send Enquiry →</button></div>
+          </form>
+          <p style="font-size:.78rem;margin-top:12px">This form opens your email application because the site is hosted as a static GitHub Pages website.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="brand" style="color:#fff"><span class="brand-mark">R</span><span class="brand-text">RIAIN CIVIL ENGINEERING<small style="color:#8fa3b5">QUALITY · SAFETY · DELIVERY</small></span></div><p style="margin-top:20px;max-width:470px">Professional civil engineering and infrastructure services delivered with a focus on safety, quality and reliable project delivery.</p></div>
+        <div><h3>Quick Links</h3><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#careers">Careers</a></div>
+        <div><h3>Contact</h3><a href="tel:+353940936111">094 093 6111</a><a href="mailto:info@riain.ie">info@riain.ie</a><span>Co. Mayo, Ireland</span></div>
+      </div>
+      <div class="copyright"><span>© <span id="year"></span> Riain Civil Engineering. All rights reserved.</span><span>Website hosted on GitHub Pages</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn=document.querySelector('.menu-btn');
+    const navLinks=document.querySelector('.nav-links');
+    menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('show')});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    function sendMail(e){
+      e.preventDefault();
+      const n=encodeURIComponent(document.getElementById('name').value);
+      const c=encodeURIComponent(document.getElementById('company').value);
+      const em=encodeURIComponent(document.getElementById('email').value);
+      const p=encodeURIComponent(document.getElementById('phone').value);
+      const s=encodeURIComponent(document.getElementById('subject').value);
+      const m=encodeURIComponent(document.getElementById('message').value);
+      const body=`Name: ${n}%0ACompany: ${c}%0AEmail: ${em}%0APhone: ${p}%0A%0A${m}`;
+      window.location.href=`mailto:info@riain.ie?subject=${s}%20-%20Website%20Enquiry&body=${body}`;
+    }
+  </script>
+</body>
+</html>
